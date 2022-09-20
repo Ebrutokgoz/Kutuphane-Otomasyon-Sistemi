@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KutuphaneVeriTabaniModelStoreContainer" CdmEntityContainer="KutuphaneVeriTabaniEntities">
+    <EntitySetMapping Name="Calisanlar">
+      <EntityTypeMapping TypeName="KutuphaneVeriTabaniModel.Calisanlar">
+        <MappingFragment StoreEntitySet="Calisanlar">
+          <ScalarProperty Name="Calisan_id" ColumnName="Calisan_id" />
+          <ScalarProperty Name="Calisan_ad" ColumnName="Calisan_ad" />
+          <ScalarProperty Name="Calisan_soyad" ColumnName="Calisan_soyad" />
+          <ScalarProperty Name="Calisan_sifre" ColumnName="Calisan_sifre" />
+          <ScalarProperty Name="Calisan_telefon" ColumnName="Calisan_telefon" />
+          <ScalarProperty Name="Calisan_adres" ColumnName="Calisan_adres" />
+          <ScalarProperty Name="Calisan_eposta" ColumnName="Calisan_eposta" />
+          <ScalarProperty Name="Unvan" ColumnName="Unvan" />
+          <ScalarProperty Name="Kutuphane_id" ColumnName="Kutuphane_id" />
+          <ScalarProperty Name="Nobet_gunleri" ColumnName="Nobet_gunleri" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emanet">
+      <EntityTypeMapping TypeName="KutuphaneVeriTabaniModel.Emanet">
+        <MappingFragment StoreEntitySet="Emanet">
+          <ScalarProperty Name="Kayit_no" ColumnName="Kayit_no" />
+          <ScalarProperty Name="Uye_id" ColumnName="Uye_id" />
+          <ScalarProperty Name="Kitap_id" ColumnName="Kitap_id" />
+          <ScalarProperty Name="Alis_tarihi" ColumnName="Alis_tarihi" />
+          <ScalarProperty Name="Teslim_tarihi" ColumnName="Teslim_tarihi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kategori">
+      <EntityTypeMapping TypeName="KutuphaneVeriTabaniModel.Kategori">
+        <MappingFragment StoreEntitySet="Kategori">
+          <ScalarProperty Name="Kategori_id" ColumnName="Kategori_id" />
+          <ScalarProperty Name="Kategori_ad" ColumnName="Kategori_ad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kitap">
+      <EntityTypeMapping TypeName="KutuphaneVeriTabaniModel.Kitap">
+        <MappingFragment StoreEntitySet="Kitap">
+          <ScalarProperty Name="Kategori_id" ColumnName="Kategori_id" />
+          <ScalarProperty Name="Kitap_id" ColumnName="Kitap_id" />
+          <ScalarProperty Name="Kitap_ad" ColumnName="Kitap_ad" />
+          <ScalarProperty Name="Sayfa_sayisi" ColumnName="Sayfa_sayisi" />
+          <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+          <ScalarProperty Name="Yazar_id" ColumnName="Yazar_id" />
+          <ScalarProperty Name="Kütüphane_id" ColumnName="Kütüphane_id" />
+          <ScalarProperty Name="Adet" ColumnName="Adet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kitap_Yayinevi">
+      <EntityTypeMapping TypeName="KutuphaneVeriTabaniModel.Kitap_Yayinevi">
+        <MappingFragment StoreEntitySet="Kitap_Yayinevi">
+          <ScalarProperty Name="Kitap_id" ColumnName="Kitap_id" />
+          <ScalarProperty Name="Yayinevi_id" ColumnName="Yayinevi_id" />
+          <ScalarProperty Name="Basim_tarihi" ColumnName="Basim_tarihi" />
+          <ScalarProperty Name="Kayit_no" ColumnName="Kayit_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kutuphane">
+      <EntityTypeMapping TypeName="KutuphaneVeriTabaniModel.Kutuphane">
+        <MappingFragment StoreEntitySet="Kutuphane">
+          <ScalarProperty Name="Kutuphane_id" ColumnName="Kutuphane_id" />
+          <ScalarProperty Name="Kutuphane_ad" ColumnName="Kutuphane_ad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kutuphane_Uye">
+      <EntityTypeMapping TypeName="KutuphaneVeriTabaniModel.Kutuphane_Uye">
+        <MappingFragment StoreEntitySet="Kutuphane_Uye">
+          <ScalarProperty Name="Kutuphane_id" ColumnName="Kutuphane_id" />
+          <ScalarProperty Name="Uye_id" ColumnName="Uye_id" />
+          <ScalarProperty Name="Kayit_id" ColumnName="Kayit_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="KutuphaneVeriTabaniModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uyeler">
+      <EntityTypeMapping TypeName="KutuphaneVeriTabaniModel.Uyeler">
+        <MappingFragment StoreEntitySet="Uyeler">
+          <ScalarProperty Name="Uye_id" ColumnName="Uye_id" />
+          <ScalarProperty Name="Uye_ad" ColumnName="Uye_ad" />
+          <ScalarProperty Name="Uye_soyad" ColumnName="Uye_soyad" />
+          <ScalarProperty Name="Uye_eposta" ColumnName="Uye_eposta" />
+          <ScalarProperty Name="Uye_telefon" ColumnName="Uye_telefon" />
+          <ScalarProperty Name="Ceza" ColumnName="Ceza" />
+          <ScalarProperty Name="Max_kitap_sayisi" ColumnName="Max_kitap_sayisi" />
+          <ScalarProperty Name="Alınan_kitap_sayisi" ColumnName="Alınan_kitap_sayisi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yayinevi">
+      <EntityTypeMapping TypeName="KutuphaneVeriTabaniModel.Yayinevi">
+        <MappingFragment StoreEntitySet="Yayinevi">
+          <ScalarProperty Name="Yayinevi_id" ColumnName="Yayinevi_id" />
+          <ScalarProperty Name="Yayinevi_ad" ColumnName="Yayinevi_ad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yazarlar">
+      <EntityTypeMapping TypeName="KutuphaneVeriTabaniModel.Yazarlar">
+        <MappingFragment StoreEntitySet="Yazarlar">
+          <ScalarProperty Name="Yazar_id" ColumnName="Yazar_id" />
+          <ScalarProperty Name="Yazar_ad" ColumnName="Yazar_ad" />
+          <ScalarProperty Name="Yazar_soyad" ColumnName="Yazar_soyad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="KutuphaneVeriTabaniModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="KutuphaneVeriTabaniModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="KutuphaneVeriTabaniModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="KutuphaneVeriTabaniModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KutuphaneVeriTabaniModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="KutuphaneVeriTabaniModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KutuphaneVeriTabaniModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="KutuphaneVeriTabaniModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="KutuphaneVeriTabaniModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

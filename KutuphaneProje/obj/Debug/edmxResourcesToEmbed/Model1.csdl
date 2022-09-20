@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KutuphaneVeriTabaniModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Calisanlar">
+    <Key>
+      <PropertyRef Name="Calisan_id" />
+    </Key>
+    <Property Name="Calisan_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Calisan_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Calisan_soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Calisan_sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Calisan_telefon" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="Calisan_adres" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Calisan_eposta" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Unvan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Kutuphane_id" Type="Int32" Nullable="false" />
+    <Property Name="Nobet_gunleri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Kutuphane" Relationship="Self.FK_Calisanlar_Kutuphane" FromRole="Calisanlar" ToRole="Kutuphane" />
+  </EntityType>
+  <EntityType Name="Emanet">
+    <Key>
+      <PropertyRef Name="Kayit_no" />
+    </Key>
+    <Property Name="Kayit_no" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Uye_id" Type="Int32" Nullable="false" />
+    <Property Name="Kitap_id" Type="Int32" Nullable="false" />
+    <Property Name="Alis_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Teslim_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Kitap" Relationship="Self.FK_Emanet_Kitap" FromRole="Emanet" ToRole="Kitap" />
+    <NavigationProperty Name="Uyeler" Relationship="Self.FK_Emanet_Uyeler" FromRole="Emanet" ToRole="Uyeler" />
+  </EntityType>
+  <EntityType Name="Kategori">
+    <Key>
+      <PropertyRef Name="Kategori_id" />
+    </Key>
+    <Property Name="Kategori_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kategori_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Kitap" Relationship="KutuphaneVeriTabaniModel.FK_Kitap_Kategori" FromRole="Kategori" ToRole="Kitap" />
+  </EntityType>
+  <EntityType Name="Kitap">
+    <Key>
+      <PropertyRef Name="Kitap_id" />
+    </Key>
+    <Property Name="Kitap_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kitap_ad" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sayfa_sayisi" Type="Int32" />
+    <Property Name="ISBN" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Yazar_id" Type="Int32" Nullable="false" />
+    <Property Name="Kütüphane_id" Type="Int32" Nullable="false" />
+    <Property Name="Adet" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Emanet" Relationship="Self.FK_Emanet_Kitap" FromRole="Kitap" ToRole="Emanet" />
+    <NavigationProperty Name="Kutuphane" Relationship="Self.FK_Kitap_Kutuphane" FromRole="Kitap" ToRole="Kutuphane" />
+    <NavigationProperty Name="Kitap_Yayinevi" Relationship="Self.FK_Kitap_Yayinevi_Kitap" FromRole="Kitap" ToRole="Kitap_Yayinevi" />
+    <NavigationProperty Name="Yazarlar" Relationship="Self.FK_Kitap_Yazarlar" FromRole="Kitap" ToRole="Yazarlar" />
+    <Property Name="Kategori_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Kategori" Relationship="KutuphaneVeriTabaniModel.FK_Kitap_Kategori" FromRole="Kitap" ToRole="Kategori" />
+  </EntityType>
+  <EntityType Name="Kitap_Yayinevi">
+    <Key>
+      <PropertyRef Name="Kayit_no" />
+    </Key>
+    <Property Name="Kitap_id" Type="Int32" Nullable="false" />
+    <Property Name="Yayinevi_id" Type="Int32" Nullable="false" />
+    <Property Name="Basim_tarihi" Type="Int32" />
+    <Property Name="Kayit_no" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Kitap" Relationship="Self.FK_Kitap_Yayinevi_Kitap" FromRole="Kitap_Yayinevi" ToRole="Kitap" />
+    <NavigationProperty Name="Yayinevi" Relationship="Self.FK_Kitap_Yayinevi_Yayinevi" FromRole="Kitap_Yayinevi" ToRole="Yayinevi" />
+  </EntityType>
+  <EntityType Name="Kutuphane">
+    <Key>
+      <PropertyRef Name="Kutuphane_id" />
+    </Key>
+    <Property Name="Kutuphane_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kutuphane_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Calisanlar" Relationship="Self.FK_Calisanlar_Kutuphane" FromRole="Kutuphane" ToRole="Calisanlar" />
+    <NavigationProperty Name="Kitap" Relationship="Self.FK_Kitap_Kutuphane" FromRole="Kutuphane" ToRole="Kitap" />
+    <NavigationProperty Name="Kutuphane_Uye" Relationship="Self.FK_Kutuphane_Uye_Kutuphane" FromRole="Kutuphane" ToRole="Kutuphane_Uye" />
+  </EntityType>
+  <EntityType Name="Kutuphane_Uye">
+    <Key>
+      <PropertyRef Name="Kayit_id" />
+    </Key>
+    <Property Name="Kutuphane_id" Type="Int32" Nullable="false" />
+    <Property Name="Uye_id" Type="Int32" Nullable="false" />
+    <Property Name="Kayit_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Kutuphane" Relationship="Self.FK_Kutuphane_Uye_Kutuphane" FromRole="Kutuphane_Uye" ToRole="Kutuphane" />
+    <NavigationProperty Name="Uyeler" Relationship="Self.FK_Kutuphane_Uye_Uyeler" FromRole="Kutuphane_Uye" ToRole="Uyeler" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Uyeler">
+    <Key>
+      <PropertyRef Name="Uye_id" />
+    </Key>
+    <Property Name="Uye_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Uye_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Uye_soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Uye_eposta" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Uye_telefon" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="Ceza" Type="Int32" Nullable="false" />
+    <Property Name="Max_kitap_sayisi" Type="Int32" Nullable="false" />
+    <Property Name="Alınan_kitap_sayisi" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Emanet" Relationship="Self.FK_Emanet_Uyeler" FromRole="Uyeler" ToRole="Emanet" />
+    <NavigationProperty Name="Kutuphane_Uye" Relationship="Self.FK_Kutuphane_Uye_Uyeler" FromRole="Uyeler" ToRole="Kutuphane_Uye" />
+  </EntityType>
+  <EntityType Name="Yayinevi">
+    <Key>
+      <PropertyRef Name="Yayinevi_id" />
+    </Key>
+    <Property Name="Yayinevi_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Yayinevi_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Kitap_Yayinevi" Relationship="Self.FK_Kitap_Yayinevi_Yayinevi" FromRole="Yayinevi" ToRole="Kitap_Yayinevi" />
+  </EntityType>
+  <EntityType Name="Yazarlar">
+    <Key>
+      <PropertyRef Name="Yazar_id" />
+    </Key>
+    <Property Name="Yazar_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Yazar_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Yazar_soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Kitap" Relationship="Self.FK_Kitap_Yazarlar" FromRole="Yazarlar" ToRole="Kitap" />
+  </EntityType>
+  <Association Name="FK_Calisanlar_Kutuphane">
+    <End Role="Kutuphane" Type="Self.Kutuphane" Multiplicity="1" />
+    <End Role="Calisanlar" Type="Self.Calisanlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kutuphane">
+        <PropertyRef Name="Kutuphane_id" />
+      </Principal>
+      <Dependent Role="Calisanlar">
+        <PropertyRef Name="Kutuphane_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emanet_Kitap">
+    <End Role="Kitap" Type="Self.Kitap" Multiplicity="1" />
+    <End Role="Emanet" Type="Self.Emanet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kitap">
+        <PropertyRef Name="Kitap_id" />
+      </Principal>
+      <Dependent Role="Emanet">
+        <PropertyRef Name="Kitap_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emanet_Uyeler">
+    <End Role="Uyeler" Type="Self.Uyeler" Multiplicity="1" />
+    <End Role="Emanet" Type="Self.Emanet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uyeler">
+        <PropertyRef Name="Uye_id" />
+      </Principal>
+      <Dependent Role="Emanet">
+        <PropertyRef Name="Uye_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kitap_Kutuphane">
+    <End Role="Kutuphane" Type="Self.Kutuphane" Multiplicity="1" />
+    <End Role="Kitap" Type="Self.Kitap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kutuphane">
+        <PropertyRef Name="Kutuphane_id" />
+      </Principal>
+      <Dependent Role="Kitap">
+        <PropertyRef Name="Kütüphane_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kitap_Yayinevi_Kitap">
+    <End Role="Kitap" Type="Self.Kitap" Multiplicity="1" />
+    <End Role="Kitap_Yayinevi" Type="Self.Kitap_Yayinevi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kitap">
+        <PropertyRef Name="Kitap_id" />
+      </Principal>
+      <Dependent Role="Kitap_Yayinevi">
+        <PropertyRef Name="Kitap_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kitap_Yazarlar">
+    <End Role="Yazarlar" Type="Self.Yazarlar" Multiplicity="1" />
+    <End Role="Kitap" Type="Self.Kitap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Yazarlar">
+        <PropertyRef Name="Yazar_id" />
+      </Principal>
+      <Dependent Role="Kitap">
+        <PropertyRef Name="Yazar_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kitap_Yayinevi_Yayinevi">
+    <End Role="Yayinevi" Type="Self.Yayinevi" Multiplicity="1" />
+    <End Role="Kitap_Yayinevi" Type="Self.Kitap_Yayinevi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Yayinevi">
+        <PropertyRef Name="Yayinevi_id" />
+      </Principal>
+      <Dependent Role="Kitap_Yayinevi">
+        <PropertyRef Name="Yayinevi_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kutuphane_Uye_Kutuphane">
+    <End Role="Kutuphane" Type="Self.Kutuphane" Multiplicity="1" />
+    <End Role="Kutuphane_Uye" Type="Self.Kutuphane_Uye" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kutuphane">
+        <PropertyRef Name="Kutuphane_id" />
+      </Principal>
+      <Dependent Role="Kutuphane_Uye">
+        <PropertyRef Name="Kutuphane_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kutuphane_Uye_Uyeler">
+    <End Role="Uyeler" Type="Self.Uyeler" Multiplicity="1" />
+    <End Role="Kutuphane_Uye" Type="Self.Kutuphane_Uye" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uyeler">
+        <PropertyRef Name="Uye_id" />
+      </Principal>
+      <Dependent Role="Kutuphane_Uye">
+        <PropertyRef Name="Uye_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KutuphaneVeriTabaniEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Calisanlar" EntityType="Self.Calisanlar" />
+    <EntitySet Name="Emanet" EntityType="Self.Emanet" />
+    <EntitySet Name="Kategori" EntityType="Self.Kategori" />
+    <EntitySet Name="Kitap" EntityType="Self.Kitap" />
+    <EntitySet Name="Kitap_Yayinevi" EntityType="Self.Kitap_Yayinevi" />
+    <EntitySet Name="Kutuphane" EntityType="Self.Kutuphane" />
+    <EntitySet Name="Kutuphane_Uye" EntityType="Self.Kutuphane_Uye" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Uyeler" EntityType="Self.Uyeler" />
+    <EntitySet Name="Yayinevi" EntityType="Self.Yayinevi" />
+    <EntitySet Name="Yazarlar" EntityType="Self.Yazarlar" />
+    <AssociationSet Name="FK_Calisanlar_Kutuphane" Association="Self.FK_Calisanlar_Kutuphane">
+      <End Role="Kutuphane" EntitySet="Kutuphane" />
+      <End Role="Calisanlar" EntitySet="Calisanlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emanet_Kitap" Association="Self.FK_Emanet_Kitap">
+      <End Role="Kitap" EntitySet="Kitap" />
+      <End Role="Emanet" EntitySet="Emanet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emanet_Uyeler" Association="Self.FK_Emanet_Uyeler">
+      <End Role="Uyeler" EntitySet="Uyeler" />
+      <End Role="Emanet" EntitySet="Emanet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kitap_Kutuphane" Association="Self.FK_Kitap_Kutuphane">
+      <End Role="Kutuphane" EntitySet="Kutuphane" />
+      <End Role="Kitap" EntitySet="Kitap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kitap_Yayinevi_Kitap" Association="Self.FK_Kitap_Yayinevi_Kitap">
+      <End Role="Kitap" EntitySet="Kitap" />
+      <End Role="Kitap_Yayinevi" EntitySet="Kitap_Yayinevi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kitap_Yazarlar" Association="Self.FK_Kitap_Yazarlar">
+      <End Role="Yazarlar" EntitySet="Yazarlar" />
+      <End Role="Kitap" EntitySet="Kitap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kitap_Yayinevi_Yayinevi" Association="Self.FK_Kitap_Yayinevi_Yayinevi">
+      <End Role="Yayinevi" EntitySet="Yayinevi" />
+      <End Role="Kitap_Yayinevi" EntitySet="Kitap_Yayinevi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kutuphane_Uye_Kutuphane" Association="Self.FK_Kutuphane_Uye_Kutuphane">
+      <End Role="Kutuphane" EntitySet="Kutuphane" />
+      <End Role="Kutuphane_Uye" EntitySet="Kutuphane_Uye" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kutuphane_Uye_Uyeler" Association="Self.FK_Kutuphane_Uye_Uyeler">
+      <End Role="Uyeler" EntitySet="Uyeler" />
+      <End Role="Kutuphane_Uye" EntitySet="Kutuphane_Uye" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(KutuphaneVeriTabaniModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(KutuphaneVeriTabaniModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <AssociationSet Name="FK_Kitap_Kategori" Association="KutuphaneVeriTabaniModel.FK_Kitap_Kategori">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Kitap" EntitySet="Kitap" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <Association Name="FK_Kitap_Kategori">
+    <End Type="KutuphaneVeriTabaniModel.Kategori" Role="Kategori" Multiplicity="1" />
+    <End Type="KutuphaneVeriTabaniModel.Kitap" Role="Kitap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="Kategori_id" />
+      </Principal>
+      <Dependent Role="Kitap">
+        <PropertyRef Name="Kategori_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,42 @@
+C:\Users\ebrut\Desktop\KutuphaneProje\KutuphaneProje\bin\Debug\KutuphaneProje.exe.config
+C:\Users\ebrut\Desktop\KutuphaneProje\KutuphaneProje\bin\Debug\KutuphaneProje.exe
+C:\Users\ebrut\Desktop\KutuphaneProje\KutuphaneProje\bin\Debug\KutuphaneProje.pdb
+C:\Users\ebrut\Desktop\KutuphaneProje\KutuphaneProje\bin\Debug\EntityFramework.dll
+C:\Users\ebrut\Desktop\KutuphaneProje\KutuphaneProje\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ebrut\Desktop\KutuphaneProje\KutuphaneProje\bin\Debug\EntityFramework.xml
+C:\Users\ebrut\Desktop\KutuphaneProje\KutuphaneProje\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ebrut\Desktop\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.GirisEkrani.resources
+C:\Users\ebrut\Desktop\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.Properties.Resources.resources
+C:\Users\ebrut\Desktop\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.csproj.GenerateResource.cache
+C:\Users\ebrut\Desktop\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.csproj.CoreCompileInputs.cache
+C:\Users\ebrut\Desktop\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.csproj.CopyComplete
+C:\Users\ebrut\Desktop\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.exe
+C:\Users\ebrut\Desktop\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.pdb
+C:\Users\ebrut\Desktop\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.EmanetIslemleri.resources
+C:\Users\ebrut\Desktop\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.PersonelEkrani.resources
+C:\Users\ebrut\Desktop\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.YoneticiEkrani.resources
+C:\Users\ebrut\Desktop\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.PersonelIslemleri.resources
+C:\Users\ebrut\Desktop\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.csprojAssemblyReference.cache
+C:\Users\ebrut\Desktop\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.KitapIslemleri.resources
+C:\Users\ebrut\Desktop\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.UyeIslemleri.resources
+C:\Users\ebrut\Desktop\Kütüphane Otomasyon\KutuphaneProje\KutuphaneProje\bin\Debug\KutuphaneProje.exe.config
+C:\Users\ebrut\Desktop\Kütüphane Otomasyon\KutuphaneProje\KutuphaneProje\bin\Debug\KutuphaneProje.exe
+C:\Users\ebrut\Desktop\Kütüphane Otomasyon\KutuphaneProje\KutuphaneProje\bin\Debug\KutuphaneProje.pdb
+C:\Users\ebrut\Desktop\Kütüphane Otomasyon\KutuphaneProje\KutuphaneProje\bin\Debug\EntityFramework.dll
+C:\Users\ebrut\Desktop\Kütüphane Otomasyon\KutuphaneProje\KutuphaneProje\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ebrut\Desktop\Kütüphane Otomasyon\KutuphaneProje\KutuphaneProje\bin\Debug\EntityFramework.xml
+C:\Users\ebrut\Desktop\Kütüphane Otomasyon\KutuphaneProje\KutuphaneProje\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ebrut\Desktop\Kütüphane Otomasyon\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.csproj.AssemblyReference.cache
+C:\Users\ebrut\Desktop\Kütüphane Otomasyon\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.EmanetIslemleri.resources
+C:\Users\ebrut\Desktop\Kütüphane Otomasyon\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.GirisEkrani.resources
+C:\Users\ebrut\Desktop\Kütüphane Otomasyon\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.KitapIslemleri.resources
+C:\Users\ebrut\Desktop\Kütüphane Otomasyon\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.PersonelEkrani.resources
+C:\Users\ebrut\Desktop\Kütüphane Otomasyon\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.PersonelIslemleri.resources
+C:\Users\ebrut\Desktop\Kütüphane Otomasyon\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.Properties.Resources.resources
+C:\Users\ebrut\Desktop\Kütüphane Otomasyon\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.UyeIslemleri.resources
+C:\Users\ebrut\Desktop\Kütüphane Otomasyon\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.YoneticiEkrani.resources
+C:\Users\ebrut\Desktop\Kütüphane Otomasyon\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.csproj.GenerateResource.cache
+C:\Users\ebrut\Desktop\Kütüphane Otomasyon\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.csproj.CoreCompileInputs.cache
+C:\Users\ebrut\Desktop\Kütüphane Otomasyon\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.csproj.CopyComplete
+C:\Users\ebrut\Desktop\Kütüphane Otomasyon\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.exe
+C:\Users\ebrut\Desktop\Kütüphane Otomasyon\KutuphaneProje\KutuphaneProje\obj\Debug\KutuphaneProje.pdb
